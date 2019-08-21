@@ -3,6 +3,7 @@ import VueI18n from 'vue-i18n';
 import App from './App.vue';
 import router from './router';
 import store from './store';
+import '@/assets/css/tailwind.css';
 import './assets/scss/main.scss';
 
 // messages
