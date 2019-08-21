@@ -1,5 +1,7 @@
 # vue-boilerplate
 
+vuex,vue-router,i18n,scss,route transistion(fade) animation
+
 ## Project setup
 ```
 yarn install
