@@ -2,7 +2,7 @@
 
 vuex,vue-router,i18n,scss,route transistion(fade) animation, optional tailwindcss
 
-Optional usage Tailwindcss
+Optional usage <a href="https://tailwindcss.com/">Tailwindcss</a>
 ## Optional Tailwindcss setup
 ```
 git branch feature-tailwind
