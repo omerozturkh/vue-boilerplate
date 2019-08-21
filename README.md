@@ -1,7 +1,14 @@
 # vue-boilerplate
 
-vuex,vue-router,i18n,scss,route transistion(fade) animation
+vuex,vue-router,i18n,scss,route transistion(fade) animation, optional tailwindcss
 
+Optional usage Tailwindcss
+## Optional Tailwindcss setup
+```
+git branch feature-tailwind
+git pull origin feature-tailwind
+yarn install
+```
 ## Project setup
 ```
 yarn install
