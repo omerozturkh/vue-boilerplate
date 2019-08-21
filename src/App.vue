@@ -4,26 +4,50 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
-    <router-view/>
+    <LocaleChanger />
+    <transition
+      name="fade"
+      mode="out-in"
+      @beforeLeave="beforeLeave"
+      @enter="enter"
+      @afterEnter="afterEnter">
+      <router-view/>
+    </transition>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
+<script>
+import LocaleChanger from './components/LocaleChanger.vue';
+
+export default {
+  name: 'app',
+  components: {
+    LocaleChanger,
+  },
+  data() {
+    return {
+      prevHeight: 0,
+    };
+  },
+  methods: {
+    beforeLeave(element) {
+      this.prevHeight = getComputedStyle(element).height;
+    },
+    enter(element) {
+      const elementData = element;
+      const { height } = getComputedStyle(element);
+
+      elementData.style.height = this.prevHeight;
+
+      setTimeout(() => {
+        elementData.style.height = height;
+      });
+    },
+    afterEnter(element) {
+      const elementData = element;
+      elementData.style.height = 'auto';
+    },
+  },
+};
+</script>
+
